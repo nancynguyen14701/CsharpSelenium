@@ -6,9 +6,10 @@ using Xunit;
 
 namespace Demo1.Test
 {
-    class SearchTest
+    public class SearchTest
     {
-        static void Main(String[] args)
+        [Fact]
+        public void Test()
         {
             HomePage homepage = new HomePage("Chrome");
             homepage.selectCategory("Books");
