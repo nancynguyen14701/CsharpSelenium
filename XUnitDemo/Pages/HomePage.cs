@@ -28,7 +28,7 @@ namespace Demo1.Pages
         }
         public SearchResultsPage SearchKeyWord(String keyword)
         {
-            Type("Selenium", searchBox);
+            Type(keyword, searchBox);
             Click(goButton);
             return new SearchResultsPage();           
         }      

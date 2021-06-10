@@ -10,6 +10,7 @@ namespace XUnitDemo
     {
         [Theory]
         [InlineData("Books", "Selenium", "Python Testing with Selenium: Learn to Implement Different Testing Techniques Using the Selenium WebDriver")]
+        [InlineData("Books", "UI", "Laws of UX: Using Psychology to Design Better Products & Services")]
         [InlineData("Books", "Selenium", "ABC")]
         //[ClassData(typeof(SearchData))]
         //[MemberData(nameof(SearchData.Data), MemberType = typeof(SearchData))]

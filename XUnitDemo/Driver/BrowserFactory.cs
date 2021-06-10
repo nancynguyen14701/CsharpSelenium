@@ -10,39 +10,23 @@ namespace Demo1.Driver
     class BrowserFactory
     {
         private static readonly IDictionary<string, IWebDriver> Drivers = new Dictionary<string, IWebDriver>();
-        private static IWebDriver driver;
 
         public static IWebDriver Driver
         {
-            get
-            {
-                if (driver == null)
-                    throw new NullReferenceException("The WebDriver browser instance was not initialized. You should first call the method InitBrowser.");
-                return driver;
-            }
-            set
-            {
-                driver = value;
-            }
+            get; set;            
         }
 
         public static void InitBrowser(string browserName)
         {
             switch (browserName)
             {
-                case "Firefox":
-                    if (driver == null)
-                    {                       
-                        driver = new FirefoxDriver();
-                        Drivers.Add("Firefox", driver);
-                    }
+                case "Firefox":                   
+                        Driver = new FirefoxDriver();
+                        Drivers.Add("Firefox", Driver);                   
                     break;
                 case "Chrome":
-                    if (driver == null)
-                    {
-                        driver = new ChromeDriver();
-                        Drivers.Add("Chrome", driver);
-                    }
+                        Driver = new ChromeDriver();
+                        Drivers.Add("Chrome", Driver);                    
                     break;
             }
         }
@@ -54,7 +38,6 @@ namespace Demo1.Driver
 
         public static void RemoveDriver(string browser)
         {
-
             if (Drivers.ContainsKey(browser))
             {
                 Drivers.Remove(browser);
